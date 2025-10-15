@@ -8,7 +8,7 @@ LiveOlympiad Mock Test Portal is an interactive web-based exam simulator designe
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LiveOlympiad | Mock Test Portal</title>
 <style>
-:root{
+:root {
   --blue:#0B3D91;
   --orange:#f97316;
   --yellow:#facc15;
@@ -16,109 +16,125 @@ LiveOlympiad Mock Test Portal is an interactive web-based exam simulator designe
   --dark:#111827;
   --border:#e5e7eb;
 }
-body{
-  font-family:'Helvetica',sans-serif;
+
+body {
+  font-family:'Helvetica', sans-serif;
   background:var(--light);
   color:var(--dark);
   margin:0;
+  padding:0;
 }
-h1{
+
+h1 {
   text-align:center;
   color:var(--blue);
-  margin:18px 0 10px;
   font-size:22px;
-  letter-spacing:0.3px;
+  margin:12px 0;
 }
-.card{
-  background:#fff;
-  width:90%;
-  max-width:360px;
-  margin:16px auto;
-  padding:22px;
-  border-radius:12px;
-  border:2px solid var(--orange);
-  box-shadow:0 4px 12px rgba(0,0,0,.06);
-  text-align:center;
-}
-select,button{
-  width:100%;
-  padding:10px;
-  font-size:15px;
-  border-radius:8px;
-  border:1px solid var(--border);
-  margin-top:10px;
-}
-button{
-  background:var(--blue);
-  color:white;
-  border:none;
-  cursor:pointer;
-  transition:0.2s;
-  font-weight:600;
-}
-button:hover{background:#062c6a}
-.container{
-  max-width:1000px;
-  margin:10px auto;
-  padding:16px;
-}
-.test-box{
+
+.test-box {
   background:#fff;
   padding:20px;
   border-radius:10px;
-  border-left:6px solid var(--orange);
-  box-shadow:0 4px 10px rgba(0,0,0,.05);
-  margin-bottom:16px;
+  border-left:5px solid var(--orange);
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+  margin-bottom:18px;
 }
-.options label{display:block;margin:6px 0;cursor:pointer;}
-#timer{text-align:right;font-weight:700;margin:8px 0;color:var(--blue);font-size:16px;}
-.result{text-align:center;font-weight:700;font-size:18px;color:var(--blue);}
-.nav-controls{
+
+/* 👇 Question text larger */
+.test-box b {
+  font-size:18px;
+}
+
+.test-box br + div,
+.test-box div.options {
+  font-size:18px; /* 👈 increased question text */
+  line-height:1.6;
+  margin-top:10px;
+}
+
+/* 👇 Options styling */
+.options label {
+  display:block;
+  margin:12px 0;
+  padding:12px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  background:#f9fafb;
+  cursor:pointer;
+  font-size:17px; /* 👈 increased option text */
+  transition:background 0.2s;
+}
+
+.options label:hover {
+  background:#fff8f1;
+}
+
+.options input {
+  margin-right:10px;
+  transform:scale(1.3); /* 👈 larger radio buttons */
+}
+
+/* 👇 Buttons vertically stacked (previous below next) */
+.nav-controls {
   display:flex;
-  justify-content:space-between;
-  margin-top:15px;
-  flex-wrap:wrap;
+  flex-direction:column;
   gap:10px;
+  margin-top:20px;
 }
-.navigator{
+
+.nav-controls button {
+  width:100%;
+  padding:14px;
+  font-size:16px;
+  border-radius:8px;
+  background:var(--blue);
+  color:white;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+.nav-controls button:hover { background:#062c6a; }
+
+/* 👇 Navigator buttons remain same */
+.navigator {
   background:#fff;
   border:2px solid var(--orange);
   border-radius:10px;
   box-shadow:0 2px 6px rgba(0,0,0,.08);
   padding:10px;
-  margin-top:20px;
-  text-align:center;
+  margin-top:22px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:6px;
 }
-.nav-btn{
-  display:inline-block;
+.nav-btn {
   width:36px;
   height:36px;
   line-height:36px;
-  margin:3px;
+  text-align:center;
   border-radius:50%;
-  cursor:pointer;
-  font-size:14px;
   border:1px solid var(--border);
-  transition:0.2s;
   font-weight:600;
-}
-.nav-btn.current{background:var(--orange);color:#fff;border:none;}
-.nav-btn.answered{background:var(--blue);color:#fff;border:none;}
-.nav-btn.seen{background:var(--yellow);color:#000;border:none;}
-.nav-btn.unanswered{background:#f3f4f6;color:#333;}
-p.para{
-  background:#fef2e6;
-  padding:10px;
-  border-radius:6px;
+  cursor:pointer;
   font-size:15px;
-  line-height:1.5;
 }
+.nav-btn.current{background:var(--orange);color:#fff;}
+.nav-btn.answered{background:var(--blue);color:#fff;}
+.nav-btn.seen{background:var(--yellow);color:#000;}
+.nav-btn.unanswered{background:#f3f4f6;color:#333;}
+
+/* 👇 Responsive for portrait screens */
 @media(max-width:600px){
-  h1{font-size:20px;}
-  #timer{text-align:center;margin:10px 0;}
-  .nav-controls button{flex:1;}
+  h1 { font-size:20px; }
+  .test-box { padding:16px; }
+  .options label { font-size:16px; padding:10px; }
+  .test-box b { font-size:17px; }
 }
 </style>
+
 </head>
 <body>
 
