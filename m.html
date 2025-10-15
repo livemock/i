@@ -6,169 +6,32 @@
 <title>LiveOlympiad | Mock Test</title>
 <meta name="description" content="LiveOlympiad Mock Test Portal - Free online CBSE mock tests for Classes 1 to 10 in Maths, Science, and English. Responsive UI with timer and question navigator.">
 <style>
-:root {
-  --blue:#0B3D91;
-  --orange:#f97316;
-  --yellow:#facc15;
-  --light:#ffffff;
-  --dark:#111827;
-  --border:#e5e7eb;
-}
-
-body {
-  font-family:'Helvetica', sans-serif;
-  background:var(--light);
-  color:var(--dark);
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
-}
-
-h1 {
-  text-align:center;
-  color:var(--blue);
-  font-size:20px;
-  font-weight:700;
-  margin:12px 0;
-}
-
-.card {
-  background:#fff;
-  width:92%;
-  max-width:380px;
-  margin:14px auto;
-  padding:18px;
-  border-radius:12px;
-  border:2px solid var(--orange);
-  box-shadow:0 2px 8px rgba(0,0,0,.08);
-}
-
-select, button {
-  width:100%;
-  padding:12px;
-  font-size:16px;
-  border-radius:8px;
-  border:1px solid var(--border);
-  margin-top:8px;
-}
-
-button {
-  background:var(--blue);
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover { background:#062c6a; }
-
-.container {
-  width:100%;
-  max-width:600px;
-  margin:auto;
-  padding:10px;
-}
-
-#timer {
-  text-align:center;
-  color:var(--blue);
-  font-weight:700;
-  font-size:17px;
-  margin:8px 0 15px;
-}
-
-.test-box {
-  background:#fff;
-  padding:16px;
-  border-radius:10px;
-  border-left:5px solid var(--orange);
-  box-shadow:0 2px 6px rgba(0,0,0,.08);
-  margin-bottom:14px;
-}
-
-.options label {
-  display:block;
-  margin:10px 0;
-  padding:10px;
-  border:1px solid #ddd;
-  border-radius:8px;
-  background:#f9fafb;
-  cursor:pointer;
-  font-size:15px;
-}
-
-.options input { margin-right:8px; }
-
+/* Replace your nav-controls section in CSS with this */
 .nav-controls {
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:15px;
+  display: flex;
+  flex-direction: column; /* 👈 buttons will be vertical now */
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .nav-controls button {
-  flex:1;
-  padding:12px;
-  font-size:15px;
-  border-radius:8px;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.navigator {
-  margin-top:18px;
-  background:#fff;
-  border:2px solid var(--orange);
-  border-radius:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,.08);
-  padding:10px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:6px;
-}
-
-.nav-btn {
-  width:34px;
-  height:34px;
-  line-height:34px;
-  text-align:center;
-  border-radius:50%;
-  border:1px solid var(--border);
-  font-weight:600;
-  cursor:pointer;
-  font-size:14px;
-  transition:0.2s;
-}
-
-.nav-btn.current { background:var(--orange); color:#fff; border:none; }
-.nav-btn.answered { background:var(--blue); color:#fff; border:none; }
-.nav-btn.seen { background:var(--yellow); color:#000; border:none; }
-.nav-btn.unanswered { background:#f3f4f6; color:#333; }
-
-.result {
-  text-align:center;
-  font-weight:700;
-  font-size:18px;
-  color:var(--blue);
-}
-
-p.para {
-  background:#fef2e6;
-  padding:10px;
-  border-radius:6px;
-  font-size:15px;
-  line-height:1.5;
-}
-
-/* 📱 Mobile Optimization */
-@media(max-width:480px){
-  h1 { font-size:18px; }
-  button, select { font-size:15px; padding:10px; }
-  .options label { font-size:14px; }
-  .nav-btn { width:32px; height:32px; line-height:32px; font-size:13px; }
-  #timer { font-size:16px; }
+.nav-controls button:hover {
+  background: #062c6a;
 }
 </style>
+
 </head>
 <body>
 
